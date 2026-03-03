@@ -88,13 +88,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Estilo global para scroll suave */}
-      <style>{`
-        html {
-          scroll-behavior: smooth;
-        }
-      `}</style>
-
       <motion.header 
         className={`fixed w-full z-50 transition-all duration-300 ${
     scrolled 

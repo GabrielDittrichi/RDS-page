@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useState } from 'react';
 import { FaPaperPlane, FaWhatsapp } from 'react-icons/fa';
-import UltraButton from '../ui/UltraButton';
 import ElegantButton from '../ui/ElegantButton';
 
 const ContactForm = () => {

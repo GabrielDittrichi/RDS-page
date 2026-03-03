@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube, FaEnvelope, FaPhone } from 'react-icons/fa';
-
+import { FaEnvelope, FaPhone } from 'react-icons/fa';
+import { socialLinks, quickLinks, serviceLinks } from '../../data/navigation';
 
 const Footer = () => {
   const containerVariants = {
@@ -22,30 +22,6 @@ const Footer = () => {
       transition: { duration: 0.5, ease: "easeOut" }
     }
   };
-
-  const socialLinks = [
-    { icon: <FaFacebook />, url: '#', label: 'Facebook' },
-    { icon: <FaTwitter />, url: '#', label: 'Twitter' },
-    { icon: <FaInstagram />, url: '#', label: 'Instagram' },
-    { icon: <FaLinkedin />, url: '#', label: 'LinkedIn' },
-    { icon: <FaYoutube />, url: '#', label: 'YouTube' }
-  ];
-
-  const quickLinks = [
-    { name: 'Início', url: '#início' },
-    { name: 'Serviços', url: '#serviços' },
-    { name: 'Sobre Nós', url: '#sobre' },
-    { name: 'Depoimentos', url: '#depoimentos' },
-    { name: 'Contato', url: '#contato' }
-  ];
-
-  const services = [
-    { name: 'Desenvolvimento Web', url: '#serviços' },
-    { name: 'Marketing de Performance', url: '#serviços' },
-    { name: 'Gestão de Redes Sociais', url: '#serviços' },
-    { name: 'SEO & SEM', url: '#serviços' },
-    { name: 'Produção de Conteúdo', url: '#serviços' }
-  ];
 
   return (
     <footer className="gradient-dark pt-16 pb-8">
@@ -76,7 +52,7 @@ const Footer = () => {
                   whileHover={{ y: -5, scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  {social.icon}
+                  <social.icon />
                 </motion.a>
               ))}
             </div>
@@ -98,18 +74,18 @@ const Footer = () => {
               ))}
             </ul>
           </motion.div>
-          
+
           {/* Coluna 3 - Serviços */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-xl font-bold mb-6 text-gray-100">Nossos Serviços</h4>
+            <h4 className="text-xl font-bold mb-6 text-gray-100">Serviços</h4>
             <ul className="space-y-3">
-              {services.map((service, index) => (
+              {serviceLinks.map((link, index) => (
                 <li key={index}>
                   <a 
-                    href={service.url} 
+                    href={link.url} 
                     className="text-gray-300 hover:text-white hover:pl-2 transition-all duration-300"
                   >
-                    {service.name}
+                    {link.name}
                   </a>
                 </li>
               ))}

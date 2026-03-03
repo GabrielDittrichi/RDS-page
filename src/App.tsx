@@ -1,7 +1,4 @@
-import { useEffect } from 'react';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import './App.css';
 import './responsive.css';
 
@@ -18,33 +15,30 @@ import VideoSection from './components/sections/VideoSection';
 import ContactForm from './components/sections/ContactForm';
 
 function App() {
-  useEffect(() => {
-    // Inicializa a biblioteca AOS para animações de scroll
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: false,
-      mirror: true
-    });
-  }, []);
-
   return (
     <HelmetProvider>
-      <div className="App">
+      <div className="App font-sans antialiased text-gray-900 bg-white">
         <Helmet>
           <title>Real Digital Society - Agência de Marketing Digital</title>
-          <meta name="description" content="Transforme sua presença digital com estratégias inovadoras de marketing digital. Soluções personalizadas para impulsionar seu negócio." />
-          <meta name="keywords" content="marketing digital, agência de marketing, SEO, redes sociais, desenvolvimento web, marketing de performance" />
+          <meta name="description" content="Transforme sua presença digital com estratégias inovadoras de marketing digital. Soluções personalizadas em SEO, Tráfego Pago e Redes Sociais para impulsionar seu negócio." />
           <link rel="canonical" href="https://realdigitalsociety.com" />
           <meta name="robots" content="index, follow" />
+          
+          {/* Open Graph / Facebook */}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://realdigitalsociety.com/" />
           <meta property="og:title" content="Real Digital Society - Transforme sua presença digital" />
           <meta property="og:description" content="Somos especialistas em marketing digital que impulsionam seu negócio com soluções personalizadas e resultados mensuráveis." />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://realdigitalsociety.com" />
-          <meta property="og:image" content="https://realdigitalsociety.comog-image.jpg" />
+          <meta property="og:image" content="https://realdigitalsociety.com/og-image.jpg" />
+
+          {/* Twitter */}
           <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:url" content="https://realdigitalsociety.com/" />
           <meta name="twitter:title" content="Real Digital Society - Transforme sua presença digital" />
           <meta name="twitter:description" content="Somos especialistas em marketing digital que impulsionam seu negócio com soluções personalizadas e resultados mensuráveis." />
+          <meta name="twitter:image" content="https://realdigitalsociety.com/og-image.jpg" />
+
+          {/* Fonts */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
           <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />

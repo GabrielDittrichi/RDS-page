@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { FaArrowDown } from 'react-icons/fa';
+import { ArrowDown } from 'lucide-react';
 import ElegantButton from '../ui/ElegantButton';
-import UltraButton from '../ui/UltraButton';
-import WaterButton from '../ui/WaterButton';
 
 
 const HeroSection = () => {
@@ -217,10 +215,9 @@ const HeroSection = () => {
       <canvas 
         ref={canvasRef} 
         className="absolute inset-0 w-full h-full"
-        style={{ zIndex: -1 }}
       />
 
-      <div className="container mx-auto px-4 z-10">
+      <div className="relative container mx-auto px-4 z-10">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <motion.div 
             className="md:w-1/2 mb-12 md:mb-0"
@@ -288,7 +285,7 @@ const HeroSection = () => {
             className="text-white p-3 rounded-full border border-gray-300 hover:border-gray-100 transition-all"
             aria-label="Rolar para baixo"
           > 
-            <FaArrowDown className="text-xl " />
+            <ArrowDown className="text-xl " />
           </button>
           
         </motion.div>
